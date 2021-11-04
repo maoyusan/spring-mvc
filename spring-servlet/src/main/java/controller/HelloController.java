@@ -2,17 +2,17 @@ package controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class HelloController {
-    public HelloController() {
-    }
 
-    @RequestMapping("/hello")
-    public String hello(Model model) {
+    @PostMapping(value = "/hello")
+    public String hello(String  name, Model model) {
+        System.out.println("被调用了");
         //封装数据
-        model.addAttribute("msg", "Hello SpringMVCAnnotation");
+        model.addAttribute("msg", name);
         return "hello";
     }
+
 }

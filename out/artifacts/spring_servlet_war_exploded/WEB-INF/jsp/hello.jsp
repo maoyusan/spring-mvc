@@ -12,5 +12,6 @@
 </head>
 <body>
 <p>测试文本</p>
+${msg}
 </body>
 </html>
